@@ -8,3 +8,11 @@
 (1..26).each do |number|
   User.create(name: 'testuser' + number.to_s, email: 'testemailaddress' + number.to_s + '@Techacademy.jp', password: 'testpassword' + number.to_s)
 end
+
+i = 1
+while i< 26
+    (1..26).each do |number|
+      User.find(i).microposts.create(content: 'アポロ' + number.to_s + '号！！')
+    end
+    i +=1
+end
